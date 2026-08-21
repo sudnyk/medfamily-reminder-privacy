@@ -98,7 +98,8 @@
         card number. To verify access, MediBell processes the Google Play product ID,
         purchase state, expiry time and a one-way hash of the purchase token. When you
         are signed in, a verified family-plan entitlement is linked to your MediBell
-        account so it can be restored after an update or reinstall.
+        account so it can be restored after an update or reinstall. This does not
+        store payment-card details in MediBell.
       </p>
       <p>
         A one-way device-derived identifier may be used to enforce the one-time
@@ -126,14 +127,34 @@
         not use it for advertising.
       </p>
 
-      <h2>Security and retention</h2>
+      <h2>Security</h2>
       <p>
         Network traffic is encrypted in transit. Cloud tables use access-control rules
-        designed to limit data to authorized family members. Local data remains on the
-        device until it is deleted, the app data is cleared or the app is uninstalled.
-        Cloud family data is retained while the account or family group is active and
-        as reasonably needed for security, subscription verification, dispute handling
-        and legal obligations.
+        designed to limit data to authorized family members.
+      </p>
+
+      <h2>Data retention and deletion</h2>
+      <p>
+        MediBell follows these retention rules. Medication information, stock values,
+        intake history, reminder settings and other local app data are stored only on
+        your device. They remain there until you delete the data in the app, clear the
+        app's storage in Android settings, or uninstall the app.
+      </p>
+      <p>
+        Cloud account and family data are stored in Supabase only while the MediBell
+        account or the relevant family group is active. When a user confirms Delete
+        account in MediBell, the deletion process removes that user's account and its
+        associated cloud family memberships, invitations and data created by that
+        account. When an owner deletes an account, the owner's family group and its
+        associated shared family data are deleted as part of the deletion process.
+      </p>
+      <p>
+        We may retain a de-identified purchase-token hash and a de-identified
+        trial-abuse record after account deletion only for the time reasonably needed
+        to prevent fraud, resolve payment disputes, meet legal obligations or protect
+        the security of the service. These records do not contain payment-card data.
+        Google Play retains its own payment and subscription records under Google's
+        separate policies.
       </p>
 
       <h2 id="account-deletion">Account and data deletion</h2>
@@ -142,8 +163,8 @@
         MediBell account and its associated cloud family data, use the Delete account
         action in MediBell account settings. You may also request deletion by emailing
         <a href="mailto:sudniksanya@gmail.com?subject=MediBell%20account%20deletion">sudniksanya@gmail.com</a>
-        from the email address registered to the account. Subscription records required
-        for fraud prevention or legal compliance may be retained in de-identified form.
+        from the email address registered to the account. The retention rules above
+        explain the limited de-identified records that may remain after deletion.
         Google Play subscriptions must be cancelled separately in Google Play.
       </p>
 
